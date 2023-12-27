@@ -1,0 +1,20 @@
+:root {
+  --white: #fff;
+  --purple-light: #8e72ff;
+  --purple-dark: #494361;
+  --gray-light: #535252;
+  --gray-dark: #353535;
+  --gray-medium: #303030;
+  --gray-darkest: #262626;
+  --gray-ultra-dark: #161616;
+  --green-bright: #23e186;
+  --blue-deep: #20232d;
+  --red-light: #f8c9d2;
+  --red-vibrant: #ff4747;
+  --red-dark: #710e21;
+  --black: #000;
+}
+
+:root {
+  --background-base: var(--black);
+}
