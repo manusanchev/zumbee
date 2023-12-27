@@ -18,8 +18,8 @@ export default class MysqlUserRepository implements UserRepository {
         user.username,
         user.password,
         user.email,
-        user.createdAt,
-        user.emailConfirmed,
+        user.created_at,
+        user.email_confirmed,
       ],
     );
   }

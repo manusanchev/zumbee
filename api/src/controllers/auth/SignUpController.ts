@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, Response } from "express"
 import { ServicesName } from "@src/types/ServicesName";
 import type CreateUserService from "@src/services/user/CreateUserService";
 import PasswordVO from "@src/types/valueObjects/PasswordVO";
@@ -16,7 +16,7 @@ export default class SignUpController {
     this.createUser = createUserService;
   }
 
-  async handle(req: Request, res: Response, next: NextFunction) {
+  async handle(req: Request, res: Response) {
     try {
       const id = new IdVO(req.body.id).value();
       const email = new EmailVO(req.body.email).value();
@@ -26,11 +26,9 @@ export default class SignUpController {
       await this.createUser.execute(id, email, password, username);
       return res.status(201).json({});
     } catch (err: any) {
-      console.log(err);
       if (err.message && err.status) {
         return res.status(err.status).json(err);
       }
-      next();
     }
   }
 }

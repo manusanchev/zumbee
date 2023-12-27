@@ -4,7 +4,8 @@ export default class User {
         public username: string,
         public password: string,
         public email: string,
-        public createdAt: Date,
-        public emailConfirmed: boolean = false
+        public created_at: Date,
+        public updated_at: Date,
+        public email_confirmed: boolean = false
     ) {}
 }

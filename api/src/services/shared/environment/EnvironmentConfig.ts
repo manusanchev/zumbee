@@ -1,5 +1,6 @@
 export default interface IConfig {
   db: IDbConfig;
+  jwt: JwtConfig;
 }
 
 interface IDbConfig {
@@ -7,4 +8,9 @@ interface IDbConfig {
   name: string;
   user: string;
   password: string;
+}
+
+interface JwtConfig {
+  secret: string;
+  expiration: string;
 }

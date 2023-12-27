@@ -9,6 +9,8 @@ import { RepositoriesName } from "@src/types/RepositoriesName";
 import MysqlUserRepository from "@src/repositories/user/MysqlUserRepository";
 import SignInController from "@src/controllers/auth/SignInController";
 import LoginService from "@src/services/auth/LoginService";
+import JwtService from "@src/services/shared/JwtService";
+import Authenticated from "@src/routes/middlewares/authenticated";
 export default class Container {
   private readonly container: AwilixContainer;
   constructor() {
@@ -28,15 +30,18 @@ export default class Container {
     });
 
     this.container.register({
+      authenticatedMiddleware: awilix.asClass(Authenticated).singleton(),
+    });
+
+    this.container.register({
       [ServicesName.EnvironmentService]: awilix
         .asClass(EnvironmentService)
         .singleton(),
       [ServicesName.CreateUserService]: awilix
         .asClass(CreateUserService)
         .singleton(),
-      [ServicesName.LoginService]: awilix
-          .asClass(LoginService)
-          .singleton(),
+      [ServicesName.LoginService]: awilix.asClass(LoginService).singleton(),
+      [ServicesName.JwtService]: awilix.asClass(JwtService).singleton(),
     });
 
     this.container.register({

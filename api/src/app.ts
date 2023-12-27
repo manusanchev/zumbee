@@ -1,4 +1,4 @@
-import express, { Express, Response, Request } from "express";
+import express, { Express} from "express";
 import authRoutes from "@src/routes/authRoutes";
 import Container from "@src/config/container";
 import { AwilixContainer } from "awilix";
