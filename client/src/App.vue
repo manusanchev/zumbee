@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="zb-app">
@@ -11,13 +10,15 @@
 
 <style scoped>
 .zb-app {
-  background-color: var(--background-base);
+  background-color: var(--background-default);
   width: 100%;
+  padding: 2.75rem;
   height: 100vh;
 }
 
 .zb-app__view {
-  border-radius: 8%;
-  padding:;
+  border-radius: 0.5rem;
+  background-color: var(--background-primary);
+  height: 100%;
 }
 </style>

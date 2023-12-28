@@ -8,3 +8,8 @@ input, textarea {
   border: none;
   background-color: transparent;
 }
+
+button {
+  background-color: transparent;
+  border:0;
+}

@@ -1,7 +1,7 @@
-@import "base/colors.css";
-@import "base/typography.css";
-@import "base/reset.css";
+@import "colors.css";
+@import "typography.css";
+@import "reset.css";
 
 body {
-  text-rendering: optimizeLegibility;
+  color: var(--white);
 }

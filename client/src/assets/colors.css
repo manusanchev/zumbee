@@ -1,0 +1,44 @@
+:root {
+  --white: #fff;
+  --purple-light: #8e72ff;
+  --purple-dark: #494361;
+  --gray-lighter: #858585;
+  --gray-light: #535252;
+  --gray-extralight: #3d3d3d;
+  --gray-medium: #353535;
+  --gray-dark: #303030;
+  --gray-darkest: #262626;
+  --gray-ultra-dark: #161616;
+  --green-bright: #23e186;
+  --blue-dark: #20232d;
+  --red-light: #f8c9d2;
+  --red-medium: #ff4747;
+  --red-dark: #710e21;
+  --black: #000;
+}
+
+/** layout **/
+:root {
+  --background-default: var(--black);
+  --background-primary: var(--gray-darkest);
+  --background-secondary: var(--gray-dark);
+  --background-elevation: var(--gray-extralight);
+}
+
+/* Text */
+:root {
+  --text-primary: var(--white);
+}
+
+/* Button */
+:root {
+  --button-text-default: var(--white);
+  --button-text-dark: var(--gray-dark);
+  --button-border-primary: var(--purple-light);
+  --button-border-secondary: var(--white);
+  --button-bg-neutral: var(--white);
+  --button-bg-primary: var(--purple-light);
+  --button-bg-danger: var(--red-medium);
+}
+
+/*Input*/
