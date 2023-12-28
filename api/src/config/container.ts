@@ -11,8 +11,10 @@ import SignInController from "@src/controllers/auth/SignInController";
 import LoginService from "@src/services/auth/LoginService";
 import JwtService from "@src/services/shared/JwtService";
 import Authenticated from "@src/routes/middlewares/authenticated";
+
 export default class Container {
   private readonly container: AwilixContainer;
+
   constructor() {
     this.container = awilix.createContainer({
       injectionMode: awilix.InjectionMode.PROXY,
