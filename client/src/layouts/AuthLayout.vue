@@ -26,4 +26,14 @@ import HeroSection from "@/components/hero/HeroSection.vue"
   border-radius: 0 8px 8px 0;
   flex-grow: 1;
 }
+
+@media screen and (max-width: 800px) {
+  .zb-auth-layout__view {
+    width: 100%;
+  }
+
+  .zb-auth-layout__hero {
+    display: none;
+  }
+}
 </style>

@@ -1,5 +1,6 @@
 :root {
   --white: #fff;
+  --purple-lighter: #977ffa;
   --purple-light: #8e72ff;
   --purple-dark: #494361;
   --gray-lighter: #858585;
@@ -23,6 +24,7 @@
   --background-primary: var(--gray-darkest);
   --background-secondary: var(--gray-dark);
   --background-elevation: var(--gray-extralight);
+  --background-neutral: var(--gray-light);
 }
 
 /* Text */
@@ -38,7 +40,16 @@
   --button-border-secondary: var(--white);
   --button-bg-neutral: var(--white);
   --button-bg-primary: var(--purple-light);
+  --button-bg-primary-hover: var(--purple-lighter);
   --button-bg-danger: var(--red-medium);
+  --button-bg-disabled: var(--purple-dark);
 }
 
 /*Input*/
+:root {
+  --input-text-default: var(--white);
+  --input-placeholder: var(--gray-lighter);
+  --input-border: var(--gray-light);
+  --input-bg: var(--gray-medium);
+  --input-border-focus: var(--gray-lighter);
+}

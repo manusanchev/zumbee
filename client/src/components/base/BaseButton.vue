@@ -31,13 +31,13 @@ defineProps({
   height: 35px;
   border-radius: 0.5rem;
   padding: 0.25rem 1.25rem;
-  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 1rem;
   cursor: pointer;
   transition: background-color 250ms;
+  font-size: 14px;
 }
 
 .zb-base-button__icon:deep(*) {
@@ -47,6 +47,10 @@ defineProps({
 
 .zb-base-button--primary {
   background-color: var(--button-bg-primary);
+}
+
+.zb-base-button--primary:hover {
+  background-color: var(--button-bg-primary-hover);
 }
 
 .zb-base-button--outline.zb-base-button--white {

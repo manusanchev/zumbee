@@ -19,7 +19,7 @@ import { ButtonStyle } from "@/types/components/ButtonStyle"
     <BaseButton
       :has-icon="true"
       type="button"
-      name="Tócame"
+      name="Prueba"
       :theme="ButtonTheme.Outline"
       :style="ButtonStyle.Purple"
     >

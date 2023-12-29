@@ -2,28 +2,55 @@
 import AuthHeader from "@/components/auth/AuthHeader.vue"
 import { useRouter } from "vue-router"
 import BaseTextInput from "@/components/base/BaseTextInput.vue"
+import EmailIcon from "@/components/icons/EmailIcon.vue"
+import UserIcon from "@/components/icons/UserIcon.vue"
+import LockIcon from "@/components/icons/LockIcon.vue"
+import EyeIcon from "@/components/icons/EyeIcon.vue"
+import { ref } from "vue"
+import AuthForm from "@/components/auth/AuthForm.vue"
+import BaseSocialButton from "@/components/base/BaseSocialButton.vue"
+import { AuthStrategy } from "@/types/auth/AuthStrategy"
+import BaseSeparator from "@/components/base/BaseSeparator.vue"
 
 const router = useRouter()
+const email = ref("")
+const password = ref("")
+const username = ref("")
+
 async function goToLoginView() {
   await router.push({ name: "login" })
 }
+
+function onRegister() {}
 </script>
 <template>
   <AuthHeader hint="¿Tienes cuenta?" button-name="Entrar" @on-click-button="goToLoginView" />
-  <form class="zb-auth-view">
-    <h2>Registrarme</h2>
-    <p>En tan solo 1 sencillo paso</p>
-    <BaseTextInput />
-    <BaseTextInput />
-    <BaseTextInput />
-  </form>
+  <AuthForm
+    section-title="Registrarme"
+    section-description="En tan solo 1 sencillo paso"
+    button-name="Registrarme"
+  >
+    <BaseSocialButton :strategy="AuthStrategy.Google" />
+    <BaseSeparator />
+    <BaseTextInput
+      label="Correo electrónico"
+      type="email"
+      v-model="email"
+      placeholder="paco@gmail.com"
+    >
+      <template #icon-left><EmailIcon /></template>
+    </BaseTextInput>
+    <BaseTextInput label="Usuario" v-model="username" placeholder="zumbename">
+      <template #icon-left><UserIcon /></template>
+    </BaseTextInput>
+    <BaseTextInput
+      label="Contraseña"
+      type="password"
+      v-model="password"
+      placeholder="Introduce tu contraseña"
+    >
+      <template #icon-left><LockIcon></LockIcon></template>
+      <template #icon-right><EyeIcon /></template>
+    </BaseTextInput>
+  </AuthForm>
 </template>
-
-<style scoped>
-.zb-auth-view {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>
