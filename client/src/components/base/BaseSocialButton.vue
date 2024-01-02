@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { PropType } from "vue"
-import type { AuthStrategy } from "@/types/auth/AuthStrategy"
-import { authStrategyIconRelated } from "@/types/auth/AuthStrategy"
+import type { AuthStrategy } from "@/types/components/auth/AuthStrategy"
+import { authStrategyIconRelated } from "@/types/components/auth/AuthStrategy"
 
 defineProps({
   strategy: { type: String as PropType<AuthStrategy>, required: true }

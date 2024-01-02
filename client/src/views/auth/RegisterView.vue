@@ -7,7 +7,7 @@ import UserIcon from "@/components/icons/UserIcon.vue"
 import { ref } from "vue"
 import AuthForm from "@/components/auth/AuthForm.vue"
 import BaseSocialButton from "@/components/base/BaseSocialButton.vue"
-import { AuthStrategy } from "@/types/auth/AuthStrategy"
+import { AuthStrategy } from "@/types/components/auth/AuthStrategy"
 import BaseSeparator from "@/components/base/BaseSeparator.vue"
 import BaseFormPassword from "@/components/base/form/BaseFormPassword.vue";
 

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import AuthHeader from "@/components/auth/AuthHeader.vue"
 import { useRouter } from "vue-router"
-import { AuthStrategy } from "@/types/auth/AuthStrategy"
+import { AuthStrategy } from "@/types/components/auth/AuthStrategy"
 import AuthForm from "@/components/auth/AuthForm.vue"
 import BaseTextInput from "@/components/base/BaseTextInput.vue"
 import BaseSocialButton from "@/components/base/BaseSocialButton.vue"
