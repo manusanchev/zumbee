@@ -10,6 +10,7 @@ import LockIcon from "@/components/icons/LockIcon.vue"
 import UserIcon from "@/components/icons/UserIcon.vue"
 import BaseSeparator from "@/components/base/BaseSeparator.vue"
 import { ref } from "vue"
+import BaseFormPassword from "@/components/base/form/BaseFormPassword.vue"
 
 const router = useRouter()
 const emailOrUsername = ref("")
@@ -36,20 +37,13 @@ async function goToRegisterView() {
       label="Correo electrónico o usuario"
       type="email"
       v-model="emailOrUsername"
+      autocomplete="username"
       placeholder="paco@gmail.com"
     >
       <template #icon-left><UserIcon /></template>
     </BaseTextInput>
     <div>
-      <BaseTextInput
-        label="Contraseña"
-        type="password"
-        v-model="password"
-        placeholder="Introduce tu contraseña"
-      >
-        <template #icon-left><LockIcon></LockIcon></template>
-        <template #icon-right><EyeIcon /></template>
-      </BaseTextInput>
+      <BaseFormPassword v-model="password" />
       <div class="zb-login-view__link">
         <RouterLink to="/recover-password" class="zb-login-view__link-text"
           >Se me olvidó la contraseña</RouterLink

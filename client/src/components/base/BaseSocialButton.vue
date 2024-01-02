@@ -4,7 +4,7 @@ import type { AuthStrategy } from "@/types/auth/AuthStrategy"
 import { authStrategyIconRelated } from "@/types/auth/AuthStrategy"
 
 defineProps({
-  strategy: { type: Object as PropType<AuthStrategy>, required: true }
+  strategy: { type: String as PropType<AuthStrategy>, required: true }
 })
 </script>
 

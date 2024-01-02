@@ -5,8 +5,8 @@ import { ButtonStyle } from "@/types/components/ButtonStyle"
 
 defineProps({
   name: { type: String, required: true },
-  theme: { type: Object as PropType<ButtonTheme>, default: ButtonTheme.Primary },
-  style: { type: Object as PropType<ButtonStyle>, default: ButtonStyle.White },
+  theme: { type: String as PropType<ButtonTheme>, default: ButtonTheme.Primary },
+  style: { type: String as PropType<ButtonStyle>, default: ButtonStyle.White },
   hasIcon: { type: Boolean, default: false },
   type: { type: String as PropType<"submit" | "button">, default: "submit" }
 })

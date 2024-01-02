@@ -8,26 +8,44 @@ defineProps({
   state: { type: String as PropType<"default" | "disabled" | "error">, default: "default" },
   modelValue: { type: String, required: true },
   placeholder: { type: String, required: true },
-  required: { type: Boolean, default: undefined }
+  required: { type: Boolean, default: undefined },
+  autocomplete: { type: String, default: undefined }
 })
+
+const emits = defineEmits(["click-icon-left", "click-icon-right", "update:modelValue"])
+
+function onClickIconLeft() {
+  emits("click-icon-left")
+}
+function onClickIconRight() {
+  emits("click-icon-right")
+}
+
+function onInput(event: Event) {
+  emits("update:modelValue", (event.target as HTMLInputElement).value)
+}
 </script>
 
 <template>
   <div class="zb-base-text-input" :class="`zb-base-text-input--${state}`">
     <label class="zb-base-text-input__label" v-if="label" for="">{{ label }}</label>
     <div class="zb-base-text-input__icon-container">
-      <span class="zb-base-text-input__icon zb-base-text-input__icon-left">
+      <span class="zb-base-text-input__icon zb-base-text-input__icon-left" @click="onClickIconLeft">
         <slot name="icon-left" />
       </span>
       <input
-        type="text"
+        :type="type"
         class="zb-base-text-input__input"
         :placeholder="placeholder"
         :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)"
+        @input="onInput"
         :required="required"
+        :autocomplete="autocomplete"
       />
-      <span class="zb-base-text-input__icon zb-base-text-input__icon-right">
+      <span
+        class="zb-base-text-input__icon zb-base-text-input__icon-right"
+        @click="onClickIconRight"
+      >
         <slot name="icon-right" />
       </span>
     </div>
@@ -87,5 +105,6 @@ defineProps({
 
 .zb-base-text-input__icon-right {
   right: 8px;
+  cursor: pointer;
 }
 </style>
